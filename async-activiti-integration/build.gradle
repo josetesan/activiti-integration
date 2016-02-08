@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+description = """"""
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+
+
+
+repositories {
+        
+     maven { url "https://cloudnativejava.artifactoryonline.com/cloudnativejava/libs-release" }
+     maven { url "https://cloudnativejava.artifactoryonline.com/cloudnativejava/libs-snapshot" }
+}
+dependencies {
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version:'2.4.4'
+    compile group: 'com.h2database', name: 'h2', version:'1.4.190'
+    compile group: 'org.activiti', name: 'activiti-spring-boot-starter-basic', version:'5.19.0'
+    compile group: 'org.activiti', name: 'activiti-spring-boot-starter-integration', version:'5.19.0'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'1.3.2.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-integration', version:'1.3.2.RELEASE'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-stream-rabbit', version:'1.0.0.M4'
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'1.3.2.RELEASE') {
+exclude(module: 'commons-logging')
+    }
+}
